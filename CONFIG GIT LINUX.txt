@@ -1,0 +1,14 @@
+PARA PODER REALIZAR PUSH SE REQUIERE GENERAR UN TOKEN DESDE
+NUESTRA CUENTA DE GITHUB
+
+Url => https://github.com/settings/tokens
+
+Dar click a Generar nuevo token e ir por la opción que dice (classic)
+
+Una vez generado, copiamos el token y antes de realizar el git push, usar este
+comando.
+
+git config --global credential.helper store
+
+IMPORTANTE:
+Antes de crear el token, depende de ti, si le das tiempo de expiración.
