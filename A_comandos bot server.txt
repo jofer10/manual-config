@@ -1,0 +1,27 @@
+Server Nat principal
+ssh root@34.74.123.20 -p 7507
+P33uBr$.n1T20
+
+Dentro de server principal
+ssh root@10.142.0.97
+Urb4n0.P3r4
+
+Dentro de .97
+
+cd /sistemas/bot
+source ./venv/bin/activate
+
+cd bot_urbano 
+git pull
+
+Entrenamos
+rasa train
+
+Luego de entrenar
+listamos procesos: ps aux
+kill -9 ID (actions)
+
+Refrescamos el proyecto
+nohup rasa run --enable-api --cors "*" --port 5005 &
+nohup rasa run actions
+

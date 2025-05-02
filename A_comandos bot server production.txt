@@ -1,0 +1,40 @@
+Server Nat principal
+ssh root@34.48.118.212 -p 22
+B0tPy.Kr36
+
+***** NUEVA IP PUCLICA, USAR ESTE DE ABAJO
+ssh root@35.237.238.23 -p 22
+B0tPy.Kr36
+ 
+cd /kr36-py/
+source ./venv/bin/activate
+
+cd konnect-bot 
+git pull
+
+Entrenamos
+rasa train
+
+Luego de entrenar
+listamos procesos: ps aux
+kill -9 ID (actions)
+
+Refrescamos el proyecto
+nohup rasa run --enable-api --cors "*" --port 5005 &
+nohup rasa run actions --debug
+
+NOTA: Si no se puede instalar rasa, probar con versiones antiguas de setup
+
+ENDPOINT: http://kbot.konnect-360.pe
+
+git clone ssh://soporte@kriptonit.pe@source.developers.google.com:2022/p/kriptonit-peru/r/konnect-bot 
+git clone -b production ssh://soporte@kriptonit.pe@source.developers.google.com:2022/p/kriptonit-peru/r/konnect-bot
+
+PARA VERIFICAR QUE EN EL SERVER ESTA CORRIENDO CORRECTAMENTE EL BOT
+
+curl -X POST http://localhost:5005/webhooks/rest/webhook \
+-H "Content-Type: application/json" \
+-d '{
+      "sender": "51960131863",
+      "message": "Hola"
+    }'

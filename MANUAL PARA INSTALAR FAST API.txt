@@ -1,0 +1,15 @@
+MANUAL PARA INSTALAR FAST API
+pip install "fastapi[standard]" o pip install "fastapi[all]"
+
+PARA EJECUTAR EL SERVER
+uvicorn main:app --reload
+
+PARA INGRESAR A UN SWAGGER
+http://127.0.0.1:8000/docs o http://127.0.0.1:8000/redoc
+
+LIBRERIAS A INSTALAR
+-- DESINSTALAR ESA LIBRERIA QUE SE INSTALA CON PASSLIB E INSTALAR ESA VERSION
+pip uninstall bcrypt
+pip install bcrypt==3.2.0 -- corregir bcryp
+-- INSTALAR PYTHON-JOSE Y NO PYJWT
+pip install python-jose

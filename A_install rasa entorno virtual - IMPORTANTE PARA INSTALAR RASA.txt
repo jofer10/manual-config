@@ -1,0 +1,30 @@
+CLONAR LA WIDGET PARA PODER USAR NUESTRO BOT PARA HACER PRUEBAS:
+https://github.com/sagarvanave/Rasa-Chat-Widget.git
+
+PASOS PARA INSTALAR RASA EN EL ENTORNO VIRTUAL
+1) pip install virtualenv
+2) python -m venv venv
+3) venv\Scripts\activate
+4) pip install rasa[full]
+
+AHORA:
+CUANDO SE MODIFICAN O AGREGAN CAMBIOS AL BOT, SE DEBE ENTRENAR
+-rasa train
+LUEGO SE DEBE CORRER 
+- rasa shell
+O EN SU DEFECTO SI SE QUIERE CORRER EN UN WIDGET, USAR ESTE COMANDO
+rasa run --enable-api --cors "*" --port=7007 es opcional, para cambiar el puerto en que corre RASA
+
+PARA EJECUTAR LAS ACCIONES DE RASA
+rasa run actions --debug
+
+PARA HACER PRUEBAS EN TELEGRAM
+---- En el cdm
+ngrok authtoken TU_TOKEN_DE_AUTENTICACION
+
+https://api.telegram.org/bot7218304262:AAFp4PAIpJ-m1mZrhE0QaLEVe3ea6L98-rg/setWebhook?url=https://c642-38-25-12-107.ngrok-free.app/webhooks/telegram/webhook
+
+# telegram:
+#   access_token: "7218304262:AAFp4PAIpJ-m1mZrhE0QaLEVe3ea6L98-rg"
+#   verify: "Prueba_u_bot"
+#   webhook_url: "https://c642-38-25-12-107.ngrok-free.app/webhooks/telegram/webhook"

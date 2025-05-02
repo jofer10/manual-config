@@ -1,0 +1,18 @@
+PARA AUTOMATIZAR ALGO SIN TENER QUE CREAR UN SP
+
+DO $$
+DECLARE
+    sp RECORD;
+BEGIN
+    FOR sp IN
+        SELECT
+            n.nspname AS routine_schema,
+            p.proname AS routine_name,
+            pg_catalog.pg_get_function_identity_arguments(p.oid) AS parameter_data_types
+        FROM pg_catalog.pg_proc p
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = p.pronamespace
+        WHERE n.nspname = 'public'
+    LOOP
+        EXECUTE format('DROP FUNCTION IF EXISTS %I.%I(%s);', sp.routine_schema, sp.routine_name, sp.parameter_data_types);
+    END LOOP;
+END $$;

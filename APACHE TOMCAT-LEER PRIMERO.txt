@@ -1,0 +1,6 @@
+1. ENTRAR CARPETA CONF
+2. BUSCAR "tomcat-users" extensión XML
+3. ABRIR CON CUALQUIER EDITOR
+4. DEBAJO DEL COMENTARIO COPIAR Y PEGAR LO SIGUIENTE
+user username="admin" password="admin" roles="manager-script,admin,manager-gui"
+5. GUARDAS Y CIERRAS

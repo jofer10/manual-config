@@ -1,0 +1,31 @@
+PASOS PARA CREAR UN SSH DESDE WINDOWS
+
+NOTA IMPORTANTE!!!!!!!!!!
+HACERLO DESDE POWERSHELL EN MODO ADMIN Y HACER ESOS PASOS AHI.
+
+PASO 1:
+ssh-keygen -t rsa -b 4096 -C "tu_correo_electronico@example.com"
+
+PASO 2:
+Presiona Enter para aceptar la ubicación predeterminada del archivo (C:\Users\tu_usuario\.ssh\id_rsa).
+
+PASO 3:
+Ingresa y confirma una frase de contraseña(Opcional) Presiona enter y si te pide otra vez enter.
+
+PASO 4: HABILITAR EL AGENTE
+Get-Service ssh-agent | Set-Service -StartupType Manual
+
+PASO 5: INICIAR EL SERVICIO
+Start-Service ssh-agent
+
+PASO 6: AÑADIR EL SSH QUE CREAMOS AL INICIO
+ssh-add C:\Users\Jorge\.ssh\id_rsa
+
+PASO 7: COPIAR LA CLAVE PUBLICA AL PORTAPAPELES
+Get-Content C:\Users\Jorge\.ssh\id_rsa.pub | clip
+
+PARA VERIFICAR EL ESTADO DEL AGENTE
+Get-Service ssh-agent
+
+Ejecuta el siguiente comando para configurar el servicio ssh-agent para que se inicie automáticamente con Windows:
+Set-Service -Name ssh-agent -StartupType Automatic

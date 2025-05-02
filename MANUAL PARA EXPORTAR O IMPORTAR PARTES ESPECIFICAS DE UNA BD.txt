@@ -1,0 +1,15 @@
+MANUAL DE POSTGRES PARA EXPORTAR O IMPORTAR DATOS ESPECIFICOS
+
+PARA EXPORTAR (FUNCIONES O SP)
+Colocar el siguiente comando en el cmd de nuestro sistema, la ruta puede cambiar dependiendo donde instalaste
+postgres
+"C:\Program Files\PostgreSQL\16\bin\pg_dump.exe" -h 34.23.27.87 -U postgres -n public --section=pre-data --no-owner --no-privileges -f funciones_nex.sql nex
+
+PARA IMPORTAR (FUNCIONES O SP)
+Colocar el siguiente comando en el cmd de nuestro sistema, la ruta puede cambiar dependiendo donde instalaste
+postgres
+"C:\Program Files\PostgreSQL\16\bin\psql.exe" -h 35.237.55.226 -U postgres -d konect -f funciones_nex.sql
+
+PARA RESTAURAR
+pg_restore -U postgres -h 34.74.178.52 -d nexus --data-only --verbose "C:\BACKUP JGB - STRUCY\A_Practicas_Cursos\Consultas Postgres 2024\1_backup_konnect_1_2.sql"
+

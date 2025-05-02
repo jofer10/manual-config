@@ -1,0 +1,59 @@
+PARA EMPEZAR COLOCAMOS git init
+PARA PODER IDENTIFICAR NUESTRO REPOSITORIO LOCAL EN GIT:
+git config user.name "jofer10"
+git config user.email "jorge_galindo614@hotmail.com"
+
+UNA VEZ CONFIGURADO NUESTRO REPOSITORIO LOCAL, TOCA CONECTAR EL LOCAL CON
+REMOTO:
+git remote add origin(puede ser cualquier nombre origin=otro_nombre) https://github.com/jofer10/pruebaGIT.git
+git remote add origin https://github.com/jofer10/pruebaGIT.git
+
+COMANDOS:
+git status: 
+Indica el estado en el que se encuentra git tras realizar un breve
+cambio
+/////////////////
+git add (nombre archivo): O git add . para añadir todos los archivos
+Sirve para agregar nuestro archivo al repositorio remoto
+/////////////////
+git commit -m "mensaje":
+Sirve para confirmar el archivo que agregamos y mandamos un mensaje con -m "mensaje"
+/////////////////
+git log:
+se utiliza para ver el historial de confirmaciones (commits) en un repositorio Git.
+/////////////////
+git push -u origin rama(nombre de la rama):
+Sirve para enviar los cambios locales de la rama principal al repositorio
+remoto
+/////////////////
+git clone (colocar URL)
+Se utiliza cuando tenemos una PC nueva, pero solo cuando queremos copiar
+todo el repositorio
+/////////////////
+git pull (nombre del repositorio remoto) (nombre rama)
+git pull origin master
+Nos permite actualizar nuestro repositorio local con el nuevo push realizado
+por un compañero
+/////////////////
+git branch:
+Me indica en que rama me encuentro actualmente y para crear una rama usamos
+nuevamente
+git branch (nombreRama)
+/////////////////
+git branch -m rama1 ramita (primera nombreRama) (segundo nuevoNombre):
+Esto nos permite cambiar de nombre a nuestras ramas
+/////////////////
+git checkout (nombreRama):
+Permite cambiar de rama
+/////////////////
+git branch -d (nombreRama):
+Permite eliminar una rama, pero debemos cambiar de rama
+/////////////////
+touch (colocar archivo "archivo.extension"):
+Agrega un archivo al repositorio desde la rama en la que nos encontremos
+/////////////////
+git diff (rama) (otra rama):
+Permite ver en que se diferencian una rama de la otra
+/////////////////
+git merge (ramaOrigenCambios) (ramaDestino):
+Permite unificar 2 ramas en una sola

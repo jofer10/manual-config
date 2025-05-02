@@ -1,0 +1,69 @@
+PASOS PARA AÑADIR POSTGRESQL EN SU ULTIMA VERSION (LINUX) (SOLO POR CONSOLA)
+PASO 1:
+sudo apt install -y curl ca-certificates gnupg
+
+PASO 2:
+sudo install -d /usr/share/postgresql-common/pgdg
+curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+
+PASO 3:
+. /etc/os-release
+echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+
+PASO 4:
+sudo apt update
+
+PASO 5:
+sudo apt -y install postgresql
+
+PASO 6: (OPCIONAL)
+sudo systemctl status postgresql
+
+EN CASO DE ERRORES PORQUE no tiene la clave GPG del repositorio noble-pgdg
+Paso 1: Descargar e instalar la clave pública directamente
+curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | sudo tee /usr/share/keyrings/postgresql.gpg > /dev/null
+
+Paso 2: Corregir la línea del repositorio
+Ahora, reemplazá la línea anterior por esta (esto es lo más compatible con tu sistema):
+echo "deb [signed-by=/usr/share/keyrings/postgresql.gpg] https://apt.postgresql.org/pub/repos/apt noble-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+
+Paso 3:
+sudo apt update
+
+Paso 4:
+sudo apt install postgresql -y
+
+Paso 5: Verificar la versión
+psql --versión
+
+PARA PODER INSTALAR PGADMIN Y USAR EL ENTORNO GRAFICO HACER LO SIGUIENTE:
+
+PASO 1: Instalar dependencias necesarias
+sudo apt install curl ca-certificates gnupg -y
+
+PASO 2: Agregar el repositorio de pgAdmin
+curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | gpg --dearmor | sudo tee /usr/share/keyrings/packages-pgadmin-org.gpg > /dev/null
+
+echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/noble pgadmin4 main" | sudo tee /etc/apt/sources.list.d/pgadmin4.list
+
+PASO 3: Actualizar paquetes
+sudo apt update
+
+PASO 4: Instalar pgAdmin4 (versión de escritorio y web combinada):
+sudo apt install pgadmin4 -y
+
+Una vez hecho esto, en las aplicaciones aparecerá la app de PG Admin, pero falta agregarle una contraseña.
+
+Paso 1: Abres la terminal y colocas el siguiente comando
+sudo -u postgres psql
+
+Paso 2: Una vez que accedes como superusuario, debes ejecutar la siguiente consulta
+ALTER USER postgres WITH PASSWORD 'tu_nueva_contraseña';
+
+Paso 3: Sales del superusuario
+\q
+
+Paso 4: Agrega el server local ingresando la clave que le pusiste y listo.
+
+
+

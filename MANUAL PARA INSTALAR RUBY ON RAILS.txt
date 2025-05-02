@@ -1,0 +1,29 @@
+PASOS PARA INSTALAR RUBY ON RAILS
+LINK => https://rubyinstaller.org/
+VIDEO YT GUIA => https://youtu.be/fGIqJ6YnWl4?si=QLTQryID_6ytrLIl
+NOTA: AYUDARSE UN POCO DE CHATGPT
+
+DESPUES DE INSTALAR RUBY, ES MOMENTO DE INSTALAR RAILS, EN EL CMD COLOCAR
+ESTE COMANDO HACELRO TODO EN MODO ADMINISTRADOR
+
+gem install rails
+
+Si te sale un error por no tener actualizado algo colocar lo que te dice el cmd
+Ejemplo. gem update --system 3.5.21
+
+Luego si te sigue saliendo otro error debes irte a la terminal instalada con ruby y ejecutarlo en
+modo administrador y colocar lo siguiente
+
+pacman -S mingw-w64-x86_64-libyaml
+
+Tienes que colocar la letra S y dar enter, con eso ya queda arreglado todo
+
+LUEGO, VOLVER A UTILIZAR EL COMANDO DE INSTALACION DE RAILS
+
+gem install rails
+
+UNA VEZ INSTALADO RAILS, DEBEMOS INSTALAR NODEJS Y EN CMD DEL MISMO WINDOWS COLOCAR ESTE COMANDO
+
+npm i -g yarn
+
+Y YA TENDRIAS LISTO RUBY ON RAILS PARA DESARROLLAR PROYECTOS

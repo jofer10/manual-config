@@ -1,0 +1,19 @@
+MANUAL INSTALACION MONGODB
+
+PASO 1:
+Al descargar los 2 zip de MONGO, extraemos y la carpeta bin de ambos(solo contenido) lo colocamos en nuestro disco C, creándole un archivo con nombre bin.
+
+PASO 2:
+Seguir la documentación de instalación de mongoDB en base a un zip
+
+Pasos adicionales:
+Con este comando en cmd levantamos mongo dbpath es una ruta que creamos para guardar la base de
+datos local
+
+"C:\Servidores\bin_mongo\mongod.exe" --dbpath="C:\Servidores\db_mongo"
+
+Para ejecutar desde PowerShell
+& "C:\Servidores\bin_mongo\mongod.exe" --dbpath="C:\Servidores\db_mongo"
+
+Instalamos la extensión de mongoDB en VSC con el comando
+pip install pymongo
