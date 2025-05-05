@@ -1,0 +1,11 @@
+PASO 1: Ir a la página oficial de Dbeaver
+Descargar el que dice: https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+
+PASO 2: Abrir la terminal y ubicarnos en el archivo .deb
+sudo dpkg -i dbeaver-ce_25.0.4_amd64.deb
+
+PASO OPCIONAL: EN caso de errores
+sudo apt-get install -f
+
+PASO FINAL: Escribir el nombre del programa para abrir
+dbeaver
