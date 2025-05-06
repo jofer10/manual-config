@@ -21,7 +21,7 @@ kill -9 ID (actions)
 
 Refrescamos el proyecto
 nohup rasa run --enable-api --cors "*" --port 5005 &
-nohup rasa run actions --debug
+nohup rasa run actions &
 
 NOTA: Si no se puede instalar rasa, probar con versiones antiguas de setup
 
