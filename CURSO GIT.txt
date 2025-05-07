@@ -8,6 +8,9 @@ REMOTO:
 git remote add origin(puede ser cualquier nombre origin=otro_nombre) https://github.com/jofer10/pruebaGIT.git
 git remote add origin https://github.com/jofer10/pruebaGIT.git
 
+Para establecer que la rama local master debe hacer tracking (seguimiento) de la rama remota origin/master usar
+el siguiente comando: git branch --set-upstream-to=origin/master master
+
 COMANDOS:
 git status: 
 Indica el estado en el que se encuentra git tras realizar un breve
